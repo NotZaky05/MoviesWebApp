@@ -70,7 +70,7 @@
   border-radius: 5px;
   cursor: pointer;
   font-size: 14px;
-  width: calc(100% - 30px); /* Account for parent padding */
+  width: calc(100% - 10px); /* Account for parent padding */
   max-width: 250px;
   margin: 15px auto 0;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
