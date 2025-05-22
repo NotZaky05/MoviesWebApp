@@ -1,0 +1,147 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: #e2e8f0;
+  background-color: #1e1e2e;
+  background-image: linear-gradient(to bottom right, #1e1e2e, #282a36, #1e1e2e);
+  background-attachment: fixed;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  font-weight: 500;
+  color: #fff176;
+  text-decoration: inherit;
+  transition:
+    color 0.3s ease,
+    transform 0.2s ease;
+  display: inline-block;
+}
+
+a:hover {
+  color: #fffde7;
+  transform: translateY(-1px);
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.2em);
+  line-height: 1.1;
+  color: #fffde7;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  line-height: 1.3;
+}
+
+p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #2d2d3f;
+  color: #fff9c4;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+button:hover {
+  border-color: #fff176;
+  background-color: #3a3a4f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 241, 118, 0.2);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(255, 241, 118, 0.2);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 3px solid rgba(255, 241, 118, 0.5);
+}
+
+button::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, #fff9c4 10%, transparent 10.01%);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  transform: scale(10, 10);
+  opacity: 0;
+  transition:
+    transform 0.5s,
+    opacity 0.8s;
+}
+
+button:active::after {
+  transform: scale(0, 0);
+  opacity: 0.3;
+  transition: 0s;
+}
+
+@media (max-width: 768px) {
+  button {
+    padding: 0.5em 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    font-size: 14px;
+  }
+}
