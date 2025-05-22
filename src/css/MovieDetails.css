@@ -71,7 +71,7 @@
   cursor: pointer;
   font-size: 14px;
   width: calc(100% - 30px); /* Account for parent padding */
-  max-width: 300px; /* THIS NEEDS TO BE INCREASED */
+  max-width: 320px; /* THIS NEEDS TO BE INCREASED */
   margin: 15px auto 0;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: static; /* Reset positioning */
