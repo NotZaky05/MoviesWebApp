@@ -34,7 +34,17 @@ const MovieDetails = () => {
 
   const handleFavoriteClick = () => {
     if (isFavorite(movie.id)) {
-      removeFromFavorites(movie.id)
+      // Add animation class before removing from favorites
+      const heartIcon = document.querySelector(".details-favorite .heart-icon")
+      if (heartIcon) {
+        heartIcon.style.animation = "heartFadeOut 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)"
+        // Wait for animation to complete before updating state
+        setTimeout(() => {
+          removeFromFavorites(movie.id)
+        }, 300)
+      } else {
+        removeFromFavorites(movie.id)
+      }
     } else {
       addToFavorites(movie)
     }
@@ -89,9 +99,18 @@ const MovieDetails = () => {
               e.target.src = `https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/660px-No-Image-Placeholder.svg.png?20200912122019`
             }}
           />
-          <button onClick={handleFavoriteClick} className={`details-favorite ${favorite ? "active" : ""}`}>
-            <Heart size={24} fill={favorite ? "currentColor" : "none"} className="heart-icon" />
-            {favorite ? "Remove from Favorites" : "Add to Favorites"}
+          <button
+            onClick={handleFavoriteClick}
+            className={`details-favorite ${favorite ? "active" : ""}`}
+            aria-label={favorite ? "Remove from favorites" : "Add to favorites"}
+          >
+            <Heart
+              size={24}
+              fill={favorite ? "currentColor" : "none"}
+              className="heart-icon"
+              onAnimationEnd={(e) => (e.target.style.animation = "")}
+            />
+            <span>{favorite ? "Remove from Favorites" : "Add to Favorites"}</span>
           </button>
         </div>
 
