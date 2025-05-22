@@ -66,7 +66,7 @@ const MovieCard = ({ movie }) => {
           />
           <div className="movie-overlay">
             <button onClick={handleFavoriteClick} className={`favorite-btn ${favorite ? "active" : ""}`}>
-              <Heart size={24} fill={favorite ? "currentColor" : "none"} className="heart-icon" />
+              <Heart size={36} fill={favorite ? "currentColor" : "none"} className="heart-icon" />
             </button>
             <button className="details-btn">See Details</button>
           </div>
