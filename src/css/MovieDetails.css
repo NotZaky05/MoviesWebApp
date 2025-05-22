@@ -73,7 +73,7 @@
   width: calc(100% - 30px); /* Account for parent padding */
   max-width: 250px;
   margin: 15px auto 0;
-  transition: background-color 0.3s, transform 0.2s;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
   position: static; /* Reset positioning */
   transform: none; /* Reset transform */
 }
@@ -81,14 +81,48 @@
 .details-favorite:hover {
   background-color: rgba(0, 0, 0, 0.9);
   transform: scale(1.03);
+  box-shadow: 0 0 0 2px #ffc107; /* Yellow outline matching star color */
 }
 
 .details-favorite.active {
   color: #ff6b6b;
 }
 
+/* Add animation for active state */
+.details-favorite.active .heart-icon {
+  animation: heartBeat 0.8s ease;
+}
+
+/* Heart icon animation - Make smoother */
+@keyframes heartBeat {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Add animation for removing from favorites */
+@keyframes heartFadeOut {
+  0% {
+    transform: scale(1);
+    color: #ff6b6b;
+  }
+  100% {
+    transform: scale(1);
+    color: white;
+  }
+}
+
+/* Improve heart icon styling */
 .heart-icon {
-  transform: scale(1.2);
+  transition: transform 0.3s ease, color 0.3s ease;
+  width: 24px; /* Add specific width */
+  height: 24px; /* Add specific height */
 }
 
 .movie-details-info {
