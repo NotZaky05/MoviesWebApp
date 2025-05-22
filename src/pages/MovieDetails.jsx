@@ -86,7 +86,7 @@ const MovieDetails = () => {
   return (
     <div className="movie-details-container">
       <button className="back-button" onClick={handleGoBack}>
-        &larr; Back
+        &lt; Back
       </button>
 
       <div className="movie-details">
