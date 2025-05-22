@@ -86,7 +86,7 @@ const MovieDetails = () => {
   return (
     <div className="movie-details-container">
       <button className="back-button" onClick={handleGoBack}>
-         Back
+        &larr; Back
       </button>
 
       <div className="movie-details">
@@ -110,7 +110,7 @@ const MovieDetails = () => {
               className="heart-icon"
               onAnimationEnd={(e) => (e.target.style.animation = "")}
             />
-            <span>{favorite ? "Remove from Favorites" : "Add to Favorites"}</span>
+            <span>{favorite ? "Remove Favorite" : "Add to Favorites"}</span>
           </button>
         </div>
 
