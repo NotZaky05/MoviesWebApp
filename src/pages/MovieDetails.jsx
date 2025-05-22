@@ -110,7 +110,7 @@ const MovieDetails = () => {
               className="heart-icon"
               onAnimationEnd={(e) => (e.target.style.animation = "")}
             />
-            <span>{favorite ? "Remove Favorite" : "Add to Favorites"}</span>
+            <span>{favorite ? "Remove from Favorite" : "Add to Favorites"}</span>
           </button>
         </div>
 
