@@ -1,4 +1,6 @@
-import { Heart, Star, Clock } from 'lucide-react'
+"use client"
+
+import { Heart, Star, Clock } from "lucide-react"
 import "../css/MovieCard.css"
 import { LazyLoadImage } from "react-lazy-load-image-component"
 import "react-lazy-load-image-component/src/effects/blur.css"
@@ -17,7 +19,7 @@ const MovieCard = ({ movie }) => {
     // We'll fetch the runtime only when needed
     const fetchRuntime = async () => {
       if (runtime !== null) return // Already fetched
-      
+
       try {
         setLoading(true)
         const details = await getMovieDetails(movie.id)
@@ -64,7 +66,7 @@ const MovieCard = ({ movie }) => {
           />
           <div className="movie-overlay">
             <button onClick={handleFavoriteClick} className={`favorite-btn ${favorite ? "active" : ""}`}>
-              <Heart size={36} fill={favorite ? "currentColor" : "none"} className="heart-icon" />
+              <Heart size={24} fill={favorite ? "currentColor" : "none"} className="heart-icon" />
             </button>
             <button className="details-btn">See Details</button>
           </div>
